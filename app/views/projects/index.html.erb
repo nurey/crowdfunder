@@ -1,0 +1,9 @@
+<h1> Projects </h1>
+
+<% @projects.each do |project| %>
+  <%# only show projects owned by current_user %> 
+  <%# if project.user == current_user %>
+  <% if can? :read, project %>
+    <%= project.name %>
+  <% end %>
+<% end %>
